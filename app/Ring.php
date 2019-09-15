@@ -12,4 +12,8 @@ class Ring extends Model
     {
         return $this->belongsTo(User::class);
     }
+    public function cards()
+    {
+        return $this->hasMany(Card::class);
+    }
 }
