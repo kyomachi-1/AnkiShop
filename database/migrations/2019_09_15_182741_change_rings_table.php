@@ -14,6 +14,7 @@ class ChangeRingsTable extends Migration
     public function up()
     {
         Schema::table('rings', function (Blueprint $table) {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->renameColumn('ring_id', 'id');
         });
     }
@@ -26,7 +27,7 @@ class ChangeRingsTable extends Migration
     public function down()
     {
         Schema::table('rings', function (Blueprint $table) {
-            $table->renameColumn('ring_id', 'id');
+            //
         });
     }
 }

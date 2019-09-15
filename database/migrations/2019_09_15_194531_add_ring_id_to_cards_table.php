@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeRingsTable extends Migration
+class AddRingIdToCardsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class ChangeRingsTable extends Migration
      */
     public function up()
     {
-        Schema::table('rings', function (Blueprint $table) 
-        {
-            $table->dropForeign('rings_user_id_foreign')->change();
+        Schema::table('cards', function (Blueprint $table) {
+            $table->bigInteger('ring_id')->unsigned();
         });
-
-     }
+    }
 
     /**
      * Reverse the migrations.
@@ -27,9 +25,8 @@ class ChangeRingsTable extends Migration
      */
     public function down()
     {
-        Schema::table('rings', function (Blueprint $table) {
+        Schema::table('cards', function (Blueprint $table) {
             //
         });
-
     }
 }
