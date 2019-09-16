@@ -17,6 +17,8 @@
                     You are logged in!
                 </div>
             </div>
+            <a class="btn btn-primary" href="{{ route('rings.index') }}" role="button">Card Study！</a>
+            <a class="btn btn-primary disabled" href="{{ route('rings.index') }}" role="button">Note Study！</a>
         </div>
     </div>
 </div>
