@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Ring;
+
 class RingsController extends Controller
 {
     /**
@@ -13,7 +15,17 @@ class RingsController extends Controller
      */
     public function index()
     {
-        return view('rings.index');
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            $id = \Auth::id();
+            $rings = $user->rings->where('user_id', $id);
+
+            return view('rings.index',[
+                'rings' => $rings ]);
+
+        } else {
+            return view('welcome');
+        }
     }
 
     /**

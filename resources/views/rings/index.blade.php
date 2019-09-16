@@ -6,9 +6,14 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">カードリング一覧</div>
-
                 <div class="card-body">
-                    カードがありません……。
+                     @if(count($rings) > 0)
+                        <ul>
+                            @foreach ($rings as $ring)
+                                <li>{{ $ring->ring_name }}</li>
+                            @endforeach
+                        </ul>
+                    @endif
                 </div>
             </div>
         </div>
