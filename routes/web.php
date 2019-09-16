@@ -18,3 +18,13 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//Ring
+
+Route::get('rings/{id}', 'RingsController@show');
+Route::post('rings', 'RingsController@store');
+Route::put('rings/{id}', 'RingsController@update');
+Route::delete('rings/{id}', 'RingsController@destroy');
+Route::get('rings', 'RingsController@index')->name('rings.index');
+Route::get('rings/create', 'RingsController@create')->name('rings.create');
+Route::get('rings/{id}/edit', 'RingsController@edit')->name('rings.edit');
