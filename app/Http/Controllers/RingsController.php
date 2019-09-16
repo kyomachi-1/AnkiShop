@@ -13,7 +13,7 @@ class RingsController extends Controller
      */
     public function index()
     {
-        //
+        return view('rings.index');
     }
 
     /**
