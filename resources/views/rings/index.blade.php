@@ -19,4 +19,7 @@
         </div>
     </div>
 </div>
+
+{!! link_to_route('rings.create', 'Create Ring') !!}
+
 @endsection 

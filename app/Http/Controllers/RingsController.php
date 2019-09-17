@@ -35,7 +35,11 @@ class RingsController extends Controller
      */
     public function create()
     {
-        //
+        $ring = new Ring;
+        
+        return view('rings.create',[
+            'ring' => $ring,
+            ]);
     }
 
     /**
@@ -46,7 +50,22 @@ class RingsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        if (\Auth::check()) {
+            $user = \Auth::user();
+            $id = \Auth::id();
+
+            $ring = new Ring;
+            $ring->user_id = $id;
+            $ring->ring_name = $request->ring_name;
+            $ring->save();
+    
+            return redirect('/rings');
+
+        } else {
+            return view('/');
+        }
+        
     }
 
     /**
@@ -68,7 +87,7 @@ class RingsController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('ring.edit');
     }
 
     /**
