@@ -10,7 +10,7 @@
                      @if(count($rings) > 0)
                         <ul>
                             @foreach ($rings as $ring)
-                                <li>{!! link_to_route('rings.show', 'edit', ['id' => $ring->id]) !!}  :  {{ $ring->ring_name }}</li>
+                                <li>{!! link_to_route('rings.edit', 'edit', ['id' => $ring->id]) !!}  :  {{ $ring->ring_name }}</li>
                             @endforeach
                         </ul>
                     @endif

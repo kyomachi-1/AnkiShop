@@ -21,9 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 //Ring
 Route::get('rings/create', 'RingsController@create')->name('rings.create');
+Route::get('rings/{id}/edit', 'RingsController@edit')->name('rings.edit');
 Route::post('rings', 'RingsController@store')->name('rings.store');
 Route::get('rings/{id}', 'RingsController@show')->name('rings.show');
-Route::put('rings/{id}', 'RingsController@update');
+Route::put('rings/{id}', 'RingsController@update')->name('rings.update');
 Route::delete('rings/{id}', 'RingsController@destroy');
 Route::get('rings', 'RingsController@index')->name('rings.index');
-Route::get('rings/{id}/edit', 'RingsController@edit')->name('rings.edit');
