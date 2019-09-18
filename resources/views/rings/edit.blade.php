@@ -14,6 +14,9 @@
                     
                     {!! Form::submit('リング名の更新') !!}
                 
+                {!! Form::model($ring, ['route' => ['rings.destroy', $ring->id], 'method' => 'delete']) !!}
+                    {!! Form::submit('リングの削除') !!}
+            
                 {!! Form::close() !!}
             </div>
         </div>
