@@ -10,16 +10,15 @@
                      @if(count($rings) > 0)
                         <ul>
                             @foreach ($rings as $ring)
-                                <li>{{ $ring->ring_name }}</li>
+                                <li>{!! link_to_route('rings.show', 'edit', ['id' => $ring->id]) !!}  :  {{ $ring->ring_name }}</li>
                             @endforeach
                         </ul>
                     @endif
                 </div>
             </div>
+            <a class="btn btn-primary" href="{{ route('rings.create') }}" role="button">Create Ring</a>
         </div>
     </div>
 </div>
-
-{!! link_to_route('rings.create', 'Create Ring') !!}
 
 @endsection 
